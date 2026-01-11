@@ -8,15 +8,14 @@ jobs:
   pipeline:
     runs-on: self-hosted
 
-    steps:
-    - uses: actions/checkout@v4
+     - uses: actions/checkout@v4
+  with:
+    submodules: false   # disables submodule checkout
 
-    - name: Generate Semantic Version
-      id: version
-      uses: paulhatch/semantic-version@v5.4.0
-      with:
-        tag_prefix: "v"
-        format: "${major}.${minor}.${patch}"
+
+    - name: Set static version
+        id: version
+        run: echo "VERSION=0.1.0" >> $GITHUB_ENV
         major_pattern: "BREAKING CHANGE"
         minor_pattern: "feat"
 
