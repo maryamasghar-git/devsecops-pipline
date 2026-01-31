@@ -1,0 +1,8 @@
+# Node modules (don’t commit)
+app/node_modules/
+
+# Self-hosted runner
+actions-runner/
+
+# Log files
+*.log
