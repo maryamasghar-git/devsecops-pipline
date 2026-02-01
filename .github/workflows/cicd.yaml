@@ -73,4 +73,3 @@ jobs:
       - name: Wait for Rollout
         run: kubectl rollout status deployment/devsecops-app
 
-on
